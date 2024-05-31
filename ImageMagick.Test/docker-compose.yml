@@ -1,0 +1,8 @@
+﻿services:
+  imagemagick.test:
+    image: imagemagick.test
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9000:8080"
