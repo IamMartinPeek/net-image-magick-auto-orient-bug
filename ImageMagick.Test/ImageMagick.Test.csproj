@@ -16,6 +16,10 @@
       <Content Include="Assets\DSCF7482.jpg">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
+      <None Remove="Assets\watermark.png" />
+      <Content Include="Assets\watermark.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>

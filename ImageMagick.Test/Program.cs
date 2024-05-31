@@ -8,7 +8,7 @@ app.MapGet("/", async () =>
 {
     var imageProcessor = new ImageProcessor();
     var fileStream = new FileStream("Assets/DSCF7482.jpg", FileMode.Open);
-    var compressed = imageProcessor.Compress(fileStream, ".jpg", 75, MagickFormat.WebP, 1080, 1920);
+    var compressed = imageProcessor.Compress(fileStream, ".jpg", 75, MagickFormat.WebP, 1080, 1920, true);
     return await imageProcessor.SaveCompressed(compressed);
 });
 
