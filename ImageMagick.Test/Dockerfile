@@ -1,5 +1,5 @@
 ﻿FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-USER $APP_UID
+USER root
 WORKDIR /app
 EXPOSE 8080
 EXPOSE 8081
@@ -20,4 +20,5 @@ RUN dotnet publish "ImageMagick.Test.csproj" -c $BUILD_CONFIGURATION -o /app/pub
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+RUN chmod -R 777 /app/Assets/DSCF7482.jpg
 ENTRYPOINT ["dotnet", "ImageMagick.Test.dll"]
